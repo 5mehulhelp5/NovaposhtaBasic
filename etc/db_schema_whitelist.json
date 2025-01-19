@@ -1,0 +1,70 @@
+{
+  "api_novaposhta_user_list": {
+    "column": {
+      "api_user_list_id": true,
+      "name": true,
+      "api_key": true,
+      "api_url": true,
+      "main_account": true,
+      "status": true,
+      "comment": true
+    },
+    "index": {
+      "API_USER_LIST_API_USER_LIST_ID": true
+    },
+    "constraint": {
+      "PRIMARY": true
+    }
+  },
+  "api_novaposhta_city": {
+    "column": {
+      "api_city_id": true,
+      "description_uk": true,
+      "description_ru": true,
+      "delivery1": true,
+      "delivery2": true,
+      "delivery3": true,
+      "delivery4": true,
+      "delivery5": true,
+      "delivery6": true,
+      "delivery7": true,
+      "area": true,
+      "area_region_description_uk": true,
+      "area_region_description_ru": true,
+      "settlement_type_description_uk": true,
+      "settlement_type_description_ru": true,
+      "conglomerates": true,
+      "city_id": true,
+      "ref": true
+    },
+    "index": {
+      "API_NOVAPOSHTA_CITY_API_CITY_ID": true
+    },
+    "constraint": {
+      "PRIMARY": true
+    }
+  },
+  "api_novaposhta_depots": {
+    "column": {
+      "api_depots_id": true,
+      "ref": true,
+      "description_uk": true,
+      "description_ru": true,
+      "phone": true,
+      "type_of_warehouse": true,
+      "number": true,
+      "city_ref": true,
+      "city_description_uk": true,
+      "city_description_ru": true,
+      "max_weight_allowed": true,
+      "longitude": true,
+      "latitude": true
+    },
+    "index": {
+      "API_NOVAPOSHTA_DEPOTS_API_DEPOTS_ID": true
+    },
+    "constraint": {
+      "PRIMARY": true
+    }
+  }
+}

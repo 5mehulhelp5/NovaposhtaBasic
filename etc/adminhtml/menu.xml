@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Dragonfly_NovaposhtaBasic::management"
+             title="Nova Poshta"
+             translate="title"
+             module="Dragonfly_NovaposhtaBasic"
+             action="api_novaposhta_user_list/apiuserlist/index"
+             sortOrder="50"
+             resource="Dragonfly_NovaposhtaBasic::management"/>
+<!--        <add id="Dragonfly_NovaposhtaBasic::api_user_list_management"-->
+<!--             sortOrder="100"-->
+<!--             title="Api User List"-->
+<!--             module="Dragonfly_NovaposhtaBasic"-->
+<!--             parent="Dragonfly_NovaposhtaBasic::management"-->
+<!--             resource="Dragonfly_NovaposhtaBasic::api_user_list_management"-->
+<!--             translate="title"-->
+<!--             action="api_novaposhta_user_list/apiuserlist/index"/>-->
+        <add id="Dragonfly_NovaposhtaBasic::city"
+             sortOrder="100"
+             title="Api City List"
+             module="Dragonfly_NovaposhtaBasic"
+             parent="Dragonfly_NovaposhtaBasic::management"
+             resource="Dragonfly_NovaposhtaBasic::management"
+             translate="title"
+             action="api_novaposhta_city/apicity/index"/>
+        <add id="Dragonfly_NovaposhtaBasic::depots"
+             sortOrder="100"
+             title="Api Depots List"
+             module="Dragonfly_NovaposhtaBasic"
+             parent="Dragonfly_NovaposhtaBasic::management"
+             resource="Dragonfly_NovaposhtaBasic::management"
+             translate="title"
+             action="api_novaposhta_depots/apidepots/index"/>
+    </menu>
+</config>

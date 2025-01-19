@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="api_novaposhta_depots" resource="default" engine="innodb" comment="ApiDepots">
+        <column xsi:type="int" name="api_depots_id" padding="10" unsigned="true" nullable="false" identity="true"
+                comment="Api Depots Id Column"/>
+        <column xsi:type="varchar" name="ref" nullable="false" length="255" comment="Ref Column"/>
+        <column xsi:type="varchar" name="description_uk" nullable="false" length="255" comment="Description Uk Column"/>
+        <column xsi:type="varchar" name="description_ru" nullable="false" length="255" comment="Description Ru Column"/>
+        <column xsi:type="varchar" name="phone" nullable="false" length="255" comment="Phone Column"/>
+        <column xsi:type="varchar" name="type_of_warehouse" nullable="false" length="255"
+                comment="Type Of Warehouse Column"/>
+        <column xsi:type="varchar" name="number" nullable="false" length="255" comment="Number Column"/>
+        <column xsi:type="varchar" name="city_ref" nullable="false" length="255" comment="City Ref Column"/>
+        <column xsi:type="varchar" name="city_description_uk" nullable="false" length="255"
+                comment="City Description Uk Column"/>
+        <column xsi:type="varchar" name="city_description_ru" nullable="false" length="255"
+                comment="City Description Ru Column"/>
+        <column xsi:type="varchar" name="max_weight_allowed" nullable="false" length="255"
+                comment="Max Weight Allowed Column"/>
+        <column xsi:type="varchar" name="longitude" nullable="false" length="255" comment="Longitude Column"/>
+        <column xsi:type="varchar" name="latitude" nullable="false" length="255" comment="Latitude Column"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="api_depots_id"/>
+        </constraint>
+        <index referenceId="API_NOVAPOSHTA_DEPOTS_API_DEPOTS_ID" indexType="btree">
+            <column name="api_depots_id"/>
+        </index>
+    </table>
+    <table name="api_novaposhta_city" resource="default" engine="innodb" comment="ApiCity">
+        <column xsi:type="int" name="api_city_id" padding="10" unsigned="true" nullable="false" identity="true"
+                comment="Api City Id Column"/>
+        <column xsi:type="varchar" name="description_uk" nullable="false" length="255" comment="Description Uk Column"/>
+        <column xsi:type="varchar" name="description_ru" nullable="false" length="255" comment="Description Ru Column"/>
+        <column xsi:type="varchar" name="delivery1" nullable="false" length="255" comment="Delivery1 Column"/>
+        <column xsi:type="varchar" name="delivery2" nullable="false" length="255" comment="Delivery2 Column"/>
+        <column xsi:type="varchar" name="delivery3" nullable="false" length="255" comment="Delivery3 Column"/>
+        <column xsi:type="varchar" name="delivery4" nullable="false" length="255" comment="Delivery4 Column"/>
+        <column xsi:type="varchar" name="delivery5" nullable="false" length="255" comment="Delivery5 Column"/>
+        <column xsi:type="varchar" name="delivery6" nullable="false" length="255" comment="Delivery6 Column"/>
+        <column xsi:type="varchar" name="delivery7" nullable="false" length="255" comment="Delivery7 Column"/>
+        <column xsi:type="varchar" name="area" nullable="false" length="255" comment="Area Column"/>
+        <column xsi:type="varchar" name="area_region_description_uk" nullable="false" length="255"
+                comment="Area Region Description Uk Column"/>
+        <column xsi:type="varchar" name="area_region_description_ru" nullable="false" length="255"
+                comment="Area Region Description Ru Column"/>
+        <column xsi:type="varchar" name="settlement_type_description_uk" nullable="false" length="255"
+                comment="Settlement Type Description Uk Column"/>
+        <column xsi:type="varchar" name="settlement_type_description_ru" nullable="false" length="255"
+                comment="Settlement Type Description Ru Column"/>
+        <column xsi:type="varchar" name="conglomerates" nullable="false" length="255" comment="Conglomerates Column"/>
+        <column xsi:type="varchar" name="city_id" nullable="false" length="255" comment="City Id Column"/>
+        <column xsi:type="varchar" name="ref" nullable="false" length="255" comment="Ref Column"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="api_city_id"/>
+        </constraint>
+        <index referenceId="API_NOVAPOSHTA_CITY_API_CITY_ID" indexType="btree">
+            <column name="api_city_id"/>
+        </index>
+    </table>
+    <table name="api_novaposhta_user_list" resource="default" engine="innodb" comment="Nova Poshta Api User List">
+        <column xsi:type="int" name="api_user_list_id" padding="10" unsigned="true" nullable="false" identity="true"
+                comment="Api User List Id Column"/>
+        <column xsi:type="varchar" name="name" nullable="false" length="255" comment="Name Column"/>
+        <column xsi:type="varchar" name="api_key" nullable="false" length="255" comment="Api Key Column"/>
+        <column xsi:type="varchar" name="api_url" nullable="false" length="255" comment="Api Url Column"/>
+        <column xsi:type="boolean" name="main_account" nullable="false" comment="Main Account Column"/>
+        <column xsi:type="boolean" name="status" nullable="false" comment="Status Column"/>
+        <column xsi:type="varchar" name="comment" nullable="false" length="255" comment="Comment Column"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="api_user_list_id"/>
+        </constraint>
+        <index referenceId="API_NOVAPOSHTA_USER_LIST_API_USER_LIST_ID" indexType="btree">
+            <column name="api_user_list_id"/>
+        </index>
+    </table>
+</schema>

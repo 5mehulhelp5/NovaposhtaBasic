@@ -1,0 +1,124 @@
+<?xml version="1.0"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">api_depots_listing.api_depots_listing_data_source</item>
+            <item name="deps" xsi:type="string">api_depots_listing.api_depots_listing_data_source</item>
+        </item>
+    </argument>
+    <settings>
+        <spinner>api_depots_listing_columns</spinner>
+        <deps>
+            <dep>api_depots_listing.api_depots_listing_data_source</dep>
+        </deps>
+    </settings>
+    <dataSource name="api_depots_listing_data_source" component="Magento_Ui/js/grid/provider">
+        <settings>
+            <storageConfig>
+                <param name="indexField" xsi:type="string">api_depots_id</param>
+            </storageConfig>
+            <updateUrl path="mui/index/render"/>
+        </settings>
+        <aclResource>Dragonfly_NovaposhtaBasic::depots</aclResource>
+        <dataProvider class="Dragonfly\NovaposhtaBasic\Ui\DataProvider\ApiDepotsDataProvider"
+                      name="api_depots_listing_data_source">
+            <settings>
+                <requestFieldName>api_depots_id</requestFieldName>
+                <primaryFieldName>api_depots_id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <listingToolbar name="listing_top">
+        <filterSearch name="fulltext"/>
+        <filters name="listing_filters"/>
+        <paging name="listing_paging"/>
+    </listingToolbar>
+    <columns name="api_depots_listing_columns">
+        <column name="api_depots_id">
+            <settings>
+                <filter>textRange</filter>
+                <label translate="true">ID</label>
+                <sorting>desc</sorting>
+            </settings>
+        </column>
+        <column name="ref">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Ref</label>
+            </settings>
+        </column>
+        <column name="description_uk">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Description Uk</label>
+            </settings>
+        </column>
+        <column name="description_ru">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Description Ru</label>
+            </settings>
+        </column>
+        <column name="phone">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Phone</label>
+            </settings>
+        </column>
+        <column name="type_of_warehouse">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Type Of Warehouse</label>
+            </settings>
+        </column>
+        <column name="number">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Number</label>
+            </settings>
+        </column>
+        <column name="city_ref">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">City Ref</label>
+            </settings>
+        </column>
+        <column name="city_description_uk">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">City Description Uk</label>
+            </settings>
+        </column>
+        <column name="city_description_ru">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">City Description Ru</label>
+            </settings>
+        </column>
+        <column name="max_weight_allowed">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Max Weight Allowed</label>
+            </settings>
+        </column>
+        <column name="longitude">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Longitude</label>
+            </settings>
+        </column>
+        <column name="latitude">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Latitude</label>
+            </settings>
+        </column>
+        <actionsColumn name="actions"
+                       class="Dragonfly\NovaposhtaBasic\Ui\Component\Listing\Column\ApiDepotsBlockActions">
+            <settings>
+                <indexField>api_depots_id</indexField>
+            </settings>
+        </actionsColumn>
+    </columns>
+</listing>

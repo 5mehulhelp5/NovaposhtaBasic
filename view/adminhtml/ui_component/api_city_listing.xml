@@ -1,0 +1,152 @@
+<?xml version="1.0"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">api_city_listing.api_city_listing_data_source</item>
+            <item name="deps" xsi:type="string">api_city_listing.api_city_listing_data_source</item>
+        </item>
+    </argument>
+    <settings>
+        <spinner>api_city_listing_columns</spinner>
+        <deps>
+            <dep>api_city_listing.api_city_listing_data_source</dep>
+        </deps>
+    </settings>
+    <dataSource name="api_city_listing_data_source" component="Magento_Ui/js/grid/provider">
+        <settings>
+            <storageConfig>
+                <param name="indexField" xsi:type="string">api_city_id</param>
+            </storageConfig>
+            <updateUrl path="mui/index/render"/>
+        </settings>
+        <aclResource>Dragonfly_NovaposhtaBasic::city</aclResource>
+        <dataProvider class="Dragonfly\NovaposhtaBasic\Ui\DataProvider\ApiCityDataProvider"
+                      name="api_city_listing_data_source">
+            <settings>
+                <requestFieldName>api_city_id</requestFieldName>
+                <primaryFieldName>api_city_id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <listingToolbar name="listing_top">
+        <filters name="listing_filters"/>
+        <paging name="listing_paging"/>
+    </listingToolbar>
+    <columns name="api_city_listing_columns">
+        <column name="api_city_id">
+            <settings>
+                <filter>textRange</filter>
+                <label translate="true">ID</label>
+                <sorting>desc</sorting>
+            </settings>
+        </column>
+        <column name="description_uk">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Description Uk</label>
+            </settings>
+        </column>
+        <column name="description_ru">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Description Ru</label>
+            </settings>
+        </column>
+        <column name="delivery1">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Delivery1</label>
+            </settings>
+        </column>
+        <column name="delivery2">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Delivery2</label>
+            </settings>
+        </column>
+        <column name="delivery3">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Delivery3</label>
+            </settings>
+        </column>
+        <column name="delivery4">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Delivery4</label>
+            </settings>
+        </column>
+        <column name="delivery5">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Delivery5</label>
+            </settings>
+        </column>
+        <column name="delivery6">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Delivery6</label>
+            </settings>
+        </column>
+        <column name="delivery7">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Delivery7</label>
+            </settings>
+        </column>
+        <column name="area">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Area</label>
+            </settings>
+        </column>
+        <column name="area_region_description_uk">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Area Region Description Uk</label>
+            </settings>
+        </column>
+        <column name="area_region_description_ru">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Area Region Description Ru</label>
+            </settings>
+        </column>
+        <column name="settlement_type_description_uk">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Settlement Type Description Uk</label>
+            </settings>
+        </column>
+        <column name="settlement_type_description_ru">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Settlement Type Description Ru</label>
+            </settings>
+        </column>
+        <column name="conglomerates">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Conglomerates</label>
+            </settings>
+        </column>
+        <column name="city_id">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">City Id</label>
+            </settings>
+        </column>
+        <column name="ref">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Ref</label>
+            </settings>
+        </column>
+        <actionsColumn name="actions" class="Dragonfly\NovaposhtaBasic\Ui\Component\Listing\Column\ApiCityBlockActions">
+            <settings>
+                <indexField>api_city_id</indexField>
+            </settings>
+        </actionsColumn>
+    </columns>
+</listing>

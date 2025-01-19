@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="carriers" translate="label" type="text" sortOrder="300" showInDefault="1">
+            <resource>Dragonfly_NovaposhtaBasic::configuration</resource>
+            <group id="novaposhta_basic" translate="label" type="text" sortOrder="10" showInDefault="1">
+                <label>Nova Poshta Basic Settings</label>
+                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1">
+                    <label>Enable Nova Poshta Integration</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="api_key" showInDefault="1" sortOrder="20" translate="label" type="text">
+                    <label>API key</label>
+<!--                    <backend_model>Packetery\Checkout\Block\System\Config\Form\ApiKeyValidate</backend_model>-->
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

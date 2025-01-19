@@ -1,0 +1,40 @@
+<?php
+/** @var $block Info */
+/** @var SecureHtmlRenderer $secureRenderer */
+
+use Dragonfly\NovaposhtaBasic\Helper\Data;
+use Magento\Framework\View\Helper\SecureHtmlRenderer;
+use Magento\Sales\Block\Adminhtml\Order\View\Tab\Info;
+
+?>
+<?php
+$_order = $block->getOrder();
+$_helper = $this->helper(Data::class);
+
+$shippingPointDetails = $_helper->getShippingPointDetails($_order);
+
+if ($shippingPointDetails === null) {
+    return;
+}
+?>
+
+<section class="admin__page-section order-view-billing-shipping">
+    <div class="admin__page-section-title">
+        <span class="title"><?= $block->escapeHtml(__('Shipping Details - Nova Poshta')) ?></span>
+    </div>
+    <div class="admin__page-section-content">
+        <div class="admin__page-section-item order-payment-method<?= ($_order->getIsVirtual() ?
+            ' order-payment-method-virtual' : '') ?>">
+            <div class="admin__page-section-item-title">
+            </div>
+            <div class="admin__page-section-item-content">
+                <ul style="list-style: none">
+                    <li><strong style="margin-right: 1rem"><?= __('ID') ?>:</strong><span><?= $shippingPointDetails->getShippingPointCode() ?></span></li>
+                    <li><strong style="margin-right: 1rem"><?= __('Region') ?>:</strong><span><?= __($shippingPointDetails->getRegion()) ?></span></li>
+                    <li><strong style="margin-right: 1rem"><?= __('City') ?>:</strong><span><?= $shippingPointDetails->getCityDescriptionUk() ?></span></li>
+                    <li><strong style="margin-right: 1rem"><?= __('Address') ?>:</strong><span><?= $shippingPointDetails->getDescriptionUk() ?></span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
+    <group id="default">
+        <job instance="Dragonfly\NovaposhtaBasic\Cron\SyncCity" method="execute" name="novaposhta_basic_sync_city_cron">
+            <schedule>1 1 * * MON</schedule>
+        </job>
+        <job instance="Dragonfly\NovaposhtaBasic\Cron\SyncDepots" method="execute" name="novaposhta_basic_sync_depots_cron">
+            <schedule>2 2 * * MON</schedule>
+        </job>
+        <job instance="Dragonfly\NovaposhtaBasic\Cron\CheckCityWithoutDepots" method="execute" name="novaposhta_basic_sync_depots_cron">
+            <schedule>3 3 * * MON</schedule>
+        </job>
+    </group>
+</config>

@@ -1,0 +1,252 @@
+<?xml version="1.0"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">api_novaposhta_city_form.api_novaposhta_city_form_data_source</item>
+        </item>
+        <item name="label" xsi:type="string" translate="true">Nova Poshta Api City Form</item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+    </argument>
+    <settings>
+        <namespace>api_novaposhta_city_form</namespace>
+        <dataScope>data.general</dataScope>
+        <deps>
+            <dep>api_novaposhta_city_form.api_novaposhta_city_form_data_source</dep>
+        </deps>
+        <buttons>
+            <button name="back" class="Dragonfly\NovaposhtaBasic\Block\Form\ApiCity\Back"/>
+            <button name="delete" class="Dragonfly\NovaposhtaBasic\Block\Form\ApiCity\Delete"/>
+        </buttons>
+    </settings>
+    <dataSource name="api_novaposhta_city_form_data_source" component="Magento_Ui/js/form/provider">
+        <dataProvider class="Dragonfly\NovaposhtaBasic\Ui\DataProvider\ApiCityDataProvider"
+                      name="api_novaposhta_city_form_data_source">
+            <settings>
+                <requestFieldName>api_city_id</requestFieldName>
+                <primaryFieldName>api_city_id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <fieldset name="general" sortOrder="10">
+        <settings>
+            <label translate="true">General</label>
+        </settings>
+        <field name="api_city_id" sortOrder="0" formElement="hidden">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">api_city_id</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>text</dataType>
+                <label translate="true">Entity ID</label>
+                <dataScope>api_city_id</dataScope>
+            </settings>
+        </field>
+        <field name="description_uk" sortOrder="00" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">description_uk</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>string</dataType>
+                <label translate="true">Description Uk</label>
+                <dataScope>description_uk</dataScope>
+            </settings>
+        </field>
+        <field name="description_ru" sortOrder="10" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">description_ru</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>string</dataType>
+                <label translate="true">Description Ru</label>
+                <dataScope>description_ru</dataScope>
+            </settings>
+        </field>
+        <field name="delivery1" sortOrder="20" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">delivery1</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>string</dataType>
+                <label translate="true">Delivery1</label>
+                <dataScope>delivery1</dataScope>
+            </settings>
+        </field>
+        <field name="delivery2" sortOrder="30" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">delivery2</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>string</dataType>
+                <label translate="true">Delivery2</label>
+                <dataScope>delivery2</dataScope>
+            </settings>
+        </field>
+        <field name="delivery3" sortOrder="40" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">delivery3</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>string</dataType>
+                <label translate="true">Delivery3</label>
+                <dataScope>delivery3</dataScope>
+            </settings>
+        </field>
+        <field name="delivery4" sortOrder="50" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">delivery4</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>string</dataType>
+                <label translate="true">Delivery4</label>
+                <dataScope>delivery4</dataScope>
+            </settings>
+        </field>
+        <field name="delivery5" sortOrder="60" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">delivery5</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>string</dataType>
+                <label translate="true">Delivery5</label>
+                <dataScope>delivery5</dataScope>
+            </settings>
+        </field>
+        <field name="delivery6" sortOrder="70" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">delivery6</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>string</dataType>
+                <label translate="true">Delivery6</label>
+                <dataScope>delivery6</dataScope>
+            </settings>
+        </field>
+        <field name="delivery7" sortOrder="80" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">delivery7</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>string</dataType>
+                <label translate="true">Delivery7</label>
+                <dataScope>delivery7</dataScope>
+            </settings>
+        </field>
+        <field name="area" sortOrder="90" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">area</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>string</dataType>
+                <label translate="true">Area</label>
+                <dataScope>area</dataScope>
+            </settings>
+        </field>
+        <field name="area_region_description_uk" sortOrder="100" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">area_region_description_uk</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>string</dataType>
+                <label translate="true">Area Region Description Uk</label>
+                <dataScope>area_region_description_uk</dataScope>
+            </settings>
+        </field>
+        <field name="area_region_description_ru" sortOrder="110" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">area_region_description_ru</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>string</dataType>
+                <label translate="true">Area Region Description Ru</label>
+                <dataScope>area_region_description_ru</dataScope>
+            </settings>
+        </field>
+        <field name="settlement_type_description_uk" sortOrder="120" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">settlement_type_description_uk</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>string</dataType>
+                <label translate="true">Settlement Type Description Uk</label>
+                <dataScope>settlement_type_description_uk</dataScope>
+            </settings>
+        </field>
+        <field name="settlement_type_description_ru" sortOrder="130" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">settlement_type_description_ru</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>string</dataType>
+                <label translate="true">Settlement Type Description Ru</label>
+                <dataScope>settlement_type_description_ru</dataScope>
+            </settings>
+        </field>
+        <field name="conglomerates" sortOrder="140" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">conglomerates</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>string</dataType>
+                <label translate="true">Conglomerates</label>
+                <dataScope>conglomerates</dataScope>
+            </settings>
+        </field>
+        <field name="city_id" sortOrder="150" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">city_id</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>string</dataType>
+                <label translate="true">City Id</label>
+                <dataScope>city_id</dataScope>
+            </settings>
+        </field>
+        <field name="ref" sortOrder="160" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">ref</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>string</dataType>
+                <label translate="true">Ref</label>
+                <dataScope>ref</dataScope>
+            </settings>
+        </field>
+    </fieldset>
+</form>

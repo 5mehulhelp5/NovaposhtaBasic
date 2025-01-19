@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="admin">
+        <route id="api_user_list" frontName="api_novaposhta_user_list">
+            <module name="Dragonfly_NovaposhtaBasic"/>
+        </route>
+        <route id="api_novaposhta_city" frontName="api_novaposhta_city">
+            <module name="Dragonfly_NovaposhtaBasic"/>
+        </route>
+        <route id="api_novaposhta_depots" frontName="api_novaposhta_depots">
+            <module name="Dragonfly_NovaposhtaBasic"/>
+        </route>
+    </router>
+</config>

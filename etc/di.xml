@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Dragonfly\NovaposhtaBasic\Api\Data\ApiUserListInterface"
+                type="Dragonfly\NovaposhtaBasic\Model\Data\ApiUserListData"/>
+    <preference for="Dragonfly\NovaposhtaBasic\Api\Data\ApiRegionInterface"
+                type="Dragonfly\NovaposhtaBasic\Model\Data\ApiRegionData"/>
+    <preference for="Dragonfly\NovaposhtaBasic\Api\Data\ApiCityInterface"
+                type="Dragonfly\NovaposhtaBasic\Model\Data\ApiCityData"/>
+    <preference for="Dragonfly\NovaposhtaBasic\Api\Data\ApiDepotsInterface"
+                type="Dragonfly\NovaposhtaBasic\Model\Data\ApiDepotsData"/>
+    <type name="Magento\Framework\Console\CommandListInterface">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="dragonfly_novaposhtabasic_sync_city" xsi:type="object">
+                    Dragonfly\NovaposhtaBasic\Console\Command\SyncCity
+                </item>
+                <item name="dragonfly_novaposhtabasic_sync_depots" xsi:type="object">
+                    Dragonfly\NovaposhtaBasic\Console\Command\SyncDepots
+                </item>
+                <item name="dragonfly_novaposhtabasic_check_city_without_depots" xsi:type="object">
+                    Dragonfly\NovaposhtaBasic\Console\Command\CheckCityWithoutDepots
+                </item>
+            </argument>
+        </arguments>
+    </type>
+</config>

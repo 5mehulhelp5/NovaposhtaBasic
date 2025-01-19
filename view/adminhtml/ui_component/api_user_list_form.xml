@@ -1,0 +1,155 @@
+<?xml version="1.0"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">api_user_list_form.api_user_list_form_data_source</item>
+        </item>
+        <item name="label" xsi:type="string" translate="true">Nova Poshta Api User List Form</item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+    </argument>
+    <settings>
+        <namespace>api_user_list_form</namespace>
+        <dataScope>data.general</dataScope>
+        <deps>
+            <dep>api_user_list_form.api_user_list_form_data_source</dep>
+        </deps>
+        <buttons>
+            <button name="save" class="Dragonfly\NovaposhtaBasic\Block\Form\ApiUserList\Save"/>
+            <button name="back" class="Dragonfly\NovaposhtaBasic\Block\Form\ApiUserList\Back"/>
+            <button name="delete" class="Dragonfly\NovaposhtaBasic\Block\Form\ApiUserList\Delete"/>
+        </buttons>
+    </settings>
+    <dataSource name="api_user_list_form_data_source" component="Magento_Ui/js/form/provider">
+        <settings>
+            <submitUrl path="api_user_list/apiuserlist/save"/>
+        </settings>
+        <dataProvider class="Dragonfly\NovaposhtaBasic\Ui\DataProvider\ApiUserListDataProvider"
+                      name="api_user_list_form_data_source">
+            <settings>
+                <requestFieldName>api_user_list_id</requestFieldName>
+                <primaryFieldName>api_user_list_id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <fieldset name="general" sortOrder="10">
+        <settings>
+            <label translate="true">General</label>
+        </settings>
+        <field name="api_user_list_id" sortOrder="0" formElement="hidden">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">api_user_list_id</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>text</dataType>
+                <label translate="true">Entity ID</label>
+                <dataScope>api_user_list_id</dataScope>
+            </settings>
+        </field>
+        <field name="status" sortOrder="10" formElement="checkbox">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">status</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>bool</dataType>
+                <label translate="true">Status</label>
+                <dataScope>status</dataScope>
+            </settings>
+            <formElements>
+                <checkbox>
+                    <settings>
+                        <valueMap>
+                            <map name="false" xsi:type="number">0</map>
+                            <map name="true" xsi:type="number">1</map>
+                        </valueMap>
+                        <prefer>toggle</prefer>
+                    </settings>
+                </checkbox>
+            </formElements>
+        </field>
+        <field name="name" sortOrder="20" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">name</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>string</dataType>
+                <label translate="true">Name</label>
+                <dataScope>name</dataScope>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+            </settings>
+        </field>
+        <field name="api_key" sortOrder="30" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">api_key</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>string</dataType>
+                <label translate="true">Api Key</label>
+                <dataScope>api_key</dataScope>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+            </settings>
+        </field>
+        <field name="api_url" sortOrder="40" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">api_url</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>string</dataType>
+                <label translate="true">Api Url</label>
+                <dataScope>api_url</dataScope>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+            </settings>
+        </field>
+        <field name="main_account" sortOrder="50" formElement="checkbox">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">main_account</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>bool</dataType>
+                <label translate="true">Main Account</label>
+                <dataScope>main_account</dataScope>
+            </settings>
+            <formElements>
+                <checkbox>
+                    <settings>
+                        <valueMap>
+                            <map name="false" xsi:type="number">0</map>
+                            <map name="true" xsi:type="number">1</map>
+                        </valueMap>
+                        <prefer>toggle</prefer>
+                    </settings>
+                </checkbox>
+            </formElements>
+        </field>
+        <field name="comment" sortOrder="60" formElement="textarea">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">comment</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>string</dataType>
+                <label translate="true">Comment</label>
+                <dataScope>comment</dataScope>
+            </settings>
+        </field>
+    </fieldset>
+</form>
